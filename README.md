@@ -1,8 +1,9 @@
-# totoro-dotfiles
-
+<p align="center">
+<img height="200px" src="./screenshots/drawing.svg">
 <img height="80px" src="./screenshots/ghost-cream.svg"> <img height="80px" src="./screenshots/ghost-pink.svg"> <img height="80px" src="./screenshots/ghost-red.svg"> <img height="80px" src="./screenshots/ghost-violet.svg">
+</p>
 
-# Info
+## Info
 
 Program | Name
 ---|---
@@ -25,7 +26,7 @@ Fetch | [neofetch](https://github.com/dylanaraps/neofetch)
 Login manager | [sddm](https://github.com/sddm/sddm)
 
 
-## Setup
+## ⚙ Setup
 
 Don't use the complete `i3` config, it contains many keybindings.
 You can take parts of what you like.
@@ -42,16 +43,20 @@ You can take parts of what you like.
 
 If anything is missing open an issue.
 
-### Fonts used
+### 🖥 Fonts used
 
 - [feather](https://github.com/AT-UI/feather-font/tree/master/src/fonts)
 - [Iosevka Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Iosevka)
 - [VictorMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/VictorMono)
 
-## Screenshot
+## 📸 Screenshot 
 
 ![ss](screenshots/ss.png)
 
-## License 
+<p align="center">
 
-[WTFPL](./LICENSE)
+## ✉ License 
+
+<a href="./license"> <img height="40px" src="https://img.shields.io/static/v1?label=license&message=WTFPL&color=bf616a&labelColor=2e3440&style=for-the-badge"> </a>
+
+</p>
