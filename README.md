@@ -1,5 +1,7 @@
 <p align="center">
 <img height="200px" src="./screenshots/drawing.svg">
+</p>
+<p align="center">
 <img height="80px" src="./screenshots/ghost-cream.svg"> <img height="80px" src="./screenshots/ghost-pink.svg"> <img height="80px" src="./screenshots/ghost-red.svg"> <img height="80px" src="./screenshots/ghost-violet.svg">
 </p>
 
