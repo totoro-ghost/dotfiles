@@ -1,0 +1,56 @@
+* {
+  background-color: #282a36;
+  border-color: #2e343f;
+  text-color: #f8f8f2;
+  spacing: 0;
+  /* width: 512px; */
+  width: 25%;
+  height: 40%;
+  font: "Iosevka Nerd Font 18";
+}
+
+window {
+  border: 3px;
+  border-radius: 12px;
+  border-color: #3b4252;
+}
+
+inputbar {
+  border: 0 0 1px 0;
+  children: [prompt,entry];
+}
+
+prompt {
+  padding: 16px;
+  border: 0 1px 0 0;
+}
+
+textbox {
+  background-color: #44475a;
+  border: 1 1 1 1;
+  border-color: #3b4252;
+  border-radius: 12px;
+  padding: 8px 16px;
+}
+
+entry {
+  padding: 16px;
+}
+
+listview {
+  cycle: false;
+  margin: 0 0 -1px 0;
+  scrollbar: false;
+}
+
+element {
+  border: 0 0 1px 0;
+  padding: 4px;
+}
+
+element selected {
+  background-color: #44475a;
+  border: 0 0 0 4px;
+  border-color: #D6ACFF;
+  border-radius: 5px;
+}

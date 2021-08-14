@@ -1,0 +1,85 @@
+/* Change Only Theme Colors & Custom Font */
+.theme-dark {
+  --background-primary: #3b4252;
+  --background-secondary: #2e3440;
+  --background-tertiary: #2e3440;
+
+  --background-secondary-alt: #2e3440;
+  --channeltextarea-background: #4c566a;
+
+  --interactive-muted: #4c566a;
+  --text-normal: #d8dee9;
+  --header-primary: #eceff4;
+  --interactive-active: #eceff4;
+  /* --text-muted: transparent; */
+
+  /* --scrollbar-auto-track: transparent; */
+  /* --scrollbar-auto-thumb: transparent; */
+  /* --scrollbar-auto-scrollbar-color-thumb: transparent; */
+  /* --scrollbar-thin-thumb: transparent; */
+  /* --scrollbar-thin-track: transparent; */
+}
+
+/* Force color */
+.theme-dark .container-1D34oG {
+  background-color: #3b4252;
+}
+
+.categoryHeader-O1zU94, .theme-dark .autocomplete-1vrmpx {
+  background-color: #2e3440;
+}
+
+.theme-dark .selected-1Tbx07 {
+  background-color: #3b4252;
+}
+
+/* Fonts */
+* {
+  font-family: "Ubuntu", "VictorMono Nerd Font","Monofur Nerd Font","PT Sans", "Noto Sans CJK HK", "Noto Color Emoji", "BlexMono Nerd Font", system-ui, sans-serif !important;
+}
+
+code {
+  font-family: "VictorMono Nerd Font","Monofur Nerd Font", "BlexMono Nerd Font", "Liberation Mono", monospace !important;
+}
+
+/* Hide Inbox Button & Support Button */
+/*div[aria-label="Inbox"] {
+  display: none
+}*/
+
+a[href="https://support.discord.com"] {
+  display: none
+}
+
+/* Round Searchbar */
+div[aria-label="Search"] {
+  border-radius: 8px
+}
+
+/* Change Color Of Placeholder On Input Bar */
+.placeholder-37qJjk.fontSize16Padding-3Wk7zP {
+  color: transparent
+}
+
+
+/* Q's Role Color */
+.username-1A8OIy.clickable-1bVtEA[style="color: rgb(153, 45, 34);"] {
+  color: #bf616a !important
+}
+
+/* remove the annoying warning */
+/* <div class="channelNotice-1-XFjC guildMFAWarning-3GEzs8">
+<div class="message-3SOT5P">
+<div>
+<p>This server requires members with moderation powers to have Two-Factor Authentication.</p>
+<p>You cannot take any moderation actions until you enable it.</p>
+</div>
+<button type="button" class="btn-11C5_u button-38aScr lookFilled-1Gx00P colorBrand-3pXr91 sizeMedium-1AC_Sl grow-q77ONN">
+<div class="contents-18-Yxp">Resolve</div>
+</button>
+</div>
+</div> */
+
+.channelNotice-1-XFjC.guildMFAWarning-3GEzs8 {
+  display: none;
+}

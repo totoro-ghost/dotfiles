@@ -1,0 +1,22 @@
+# CHANGING COLORS
+# <colorclass> <border> <background> <text> <indicator> <child_border>
+client.focused         	#928374 #282828 #cc241d #ebdbb2 #ebdbb2
+client.focused_inactive	#928374	#282828 #ebdbb2 #928374 #928374
+client.unfocused       	#928374	#282828 #ebdbb2 #928374 #928374
+client.urgent		    #928374	#282828 #ebdbb2 #928374 #928374
+client.placeholder	    #928374	#282828 #ebdbb2 #928374 #928374
+client.background       #928374
+
+bar {
+	colors {
+        background #282828
+		statusline #282828
+		separator  #ebdbb2
+        # <colorclass>   <border> <background> <text>
+		focused_workspace  #282828 #458588 #282828
+		active_workspace   #ebdbb2 #282828 #ebdbb2
+		inactive_workspace #ebdbb2 #282828 #ebdbb2
+		urgent_workspace   #282828 #cc241d #282828
+		binding_mode       #ebdbb2 #cc241d #ebdbb2
+	}
+}

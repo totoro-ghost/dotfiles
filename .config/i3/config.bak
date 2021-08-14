@@ -1,0 +1,434 @@
+# ----------------------------------------
+# ---------- What I Use ------------------
+# pactl - control sound settings
+# xbacklight - control screen brightness
+# picom - X compositor
+# rofi - shows application menu, and exit menu
+# scrot - screenshot tool
+# polybar - status bar
+# polkit-gnome-authenciation-agent-1 - polkit tool
+# nm-applet - NetworkManager tray icon
+# pamac-tray - check for updates
+# greenclip-rofi - clipboard management using rofi
+# ----------------------------------------
+
+# ----------Some tools you might use------
+# xprop - use to find WM_CLASS
+# xev - capture keypresses
+# ----------------------------------------
+
+
+## Set mod key (Mod1=<Alt>, Mod4=<Super>)
+set $mod Mod4
+set $mod_next Mod1
+
+## FONTS
+# font <X core font description>
+# font pango:<family list> [<style options>] <size>
+font xft:VictorMono Nerd Font 14
+
+## FLOATING MODIFIER
+floating_modifier $mod
+
+## ORIENTATION FOR NEW WORKSPACES
+# default_orientation horizontal|vertical|auto
+default_orientation auto
+
+## LAYOUT FOR NEW WORKSPACES
+# workspace_layout default|stacking|tabbed
+workspace_layout default
+
+## WINDOW TITLE ALIGNMENT
+# title_align left|center|right
+# title_align left
+
+## DEFAULT BORDER STYLE FOR NEW WINDOWS
+# default_border normal|none|pixel
+# default_border normal|pixel <px>
+# default_floating_border normal|none|pixel
+# default_floating_border normal|pixel <px>
+default_border none
+default_floating_border none
+
+# HIDING BORDERS ADJACENT TO THE SCREEN EDGES
+# hide_edge_borders none|vertical|horizontal|both|smart
+
+# ARBITRARY COMMANDS FOR SPECIFIC WINDOWS (for_window)
+# for_window <criteria> <command>
+# for_window [class="Audacious"] floating enable
+for_window [title="alsamixer"] floating enable
+for_window [title="File Transfer*"] floating enable
+for_window [class="Lxappearance"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="qt5ct"] floating enable sticky enable
+for_window [class="Qtconfig-qt4"] floating enable sticky enable
+for_window [title="cheat"][class="feh"] floating enable, move position center, focus
+# switch to workspace with urgent window automatically
+# for_window [class="Audacious"] no_focus
+for_window [urgent=latest] focus
+
+# for_window [class=^.*] floating enable
+
+# DON’T FOCUS WINDOW UPON OPENING
+# no_focus <criteria>
+
+# AUTOMATICALLY STARTING APPLICATIONS ON I3 STARTUP
+# exec [--no-startup-id] <command>
+# exec_always [--no-startup-id] <command
+# exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id /usr/bin/lxqt-policykit-agent
+exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+exec --no-startup-id nm-applet
+exec --no-startup-id greenclip daemon
+# Polybar launch script (located ~/.config/polybar/launch.sh)
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# X RESOURCES
+# set_from_resource $<name> <resource_name> <fallback>
+# Colors set from ~/.Xresources
+set_from_resource	$background	background
+set_from_resource	$foreground	foreground
+set_from_resource	$color0		color0
+set_from_resource 	$color1 	color1
+set_from_resource 	$color2 	color2
+set_from_resource 	$color3 	color3
+set_from_resource 	$color4 	color4
+set_from_resource 	$color5 	color5
+set_from_resource 	$color6		color6
+set_from_resource	$color7		color7
+set_from_resource	$color8		color8
+set_from_resource	$color9		color9
+set_from_resource	$color10	color10
+set_from_resource	$color11	color11
+set_from_resource	$color12	color12
+set_from_resource	$color13	color13
+set_from_resource	$color14	color14
+set_from_resource	$color15	color15
+set_from_resource	$shade1	    shade1
+
+# CHANGING COLORS
+# <colorclass> <border> <background> <text> <indicator> <child_border>
+# class                 border  	background 	text    	indicicator  	child_border
+client.focused         	$foreground $background	$foreground	$foreground $foreground
+client.focused_inactive	$foreground	$color0 $foreground	$color8 $color8
+client.unfocused       	$foreground	$color0 $foreground	$color8	color8
+client.urgent		    $foreground	$color0 $foreground	$color8	$color8
+client.placeholder	    $foreground	$color0 $foreground	$color8	$color8
+client.background       $background
+
+
+# KEYBOARD BINDINGS
+# bindsym [--release] [<Group>+][<Modifiers>+]<keysym> command
+# bindcode [--release] [<Group>+][<Modifiers>+]<keycode> command
+
+# start a terminal
+bindsym $mod+Return exec konsole
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start program launcher
+bindsym $mod+d exec --no-startup-id "~/.config/rofi/launchers/launcher.sh"
+bindsym $mod_next+d exec --no-startup-id "~/Scripts/launcher_dmenu.sh"
+bindsym $mod+b exec --no-startup-id "~/.config/rofi/bookmarks/launch_dmenu.sh"
+bindsym $mod+n exec --no-startup-id "~/.config/rofi/dunst_notif/launcher.sh"
+bindsym $mod+k exec --no-startup-id "~/Scripts/play_dmenu.sh"
+
+# start file manager
+# bindsym $mod+u exec dolphin
+
+# start and kill compositor
+# bindsym $mod+t exec --no-startup-id pkill picom
+# bindsym $mod+Ctrl+t exec --no-startup-id picom -b
+bindsym $mod+t exec --no-startup-id pkill compton
+bindsym $mod+Ctrl+t exec --no-startup-id compton -b
+
+# start and kill dnust notification tool
+bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+
+# start the i3-scrot screenshot utility
+bindsym Print exec --no-startup-id scrot
+bindsym $mod+Shift+Print --release exec --no-startup-id "scrot --silent --select '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f && rm $f'"; exec notify-send "Select to copy to clipboard"
+bindsym $mod+Print --release exec --no-startup-id "scrot --select --silent --exec 'mv $f ~/Pictures/Screenshots/'"; exec notify-send "Select area to screenshot."
+
+# cipboard manager using greenclip
+bindsym $mod+c exec --no-startup-id "~/.config/rofi/greenclip/launch.sh"
+
+# i3-keybindings help
+# bindsym $mod+Shift+h exec --no-startup-id i3help -c 1
+
+# xkill utility to send kill siginal
+bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+
+# toggle polybar state
+# bindsym $mod+m exec --no-startup-id polybar-msg cmd toggle
+
+# change focus (i don't use vim keys)
+# bindsym $mod+j focus left
+# bindsym $mod+k focus down
+# bindsym $mod+l focus up
+# bindsym $mod+odiaeresis focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+# bindsym $mod+Shift+j move left
+# bindsym $mod+Shift+k move down
+# bindsym $mod+Shift+l move up
+# bindsym $mod+Shift+odiaeresis move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# workspace back and forth (with/without active container)
+workspace_auto_back_and_forth yes
+bindsym $mod+grave workspace back_and_forth
+bindsym $mod+Shift+grave move container to workspace back_and_forth; workspace back_and_forth
+
+# split orientation
+bindsym $mod+h split h;exec notify-send 'tile horizontally'
+bindsym $mod+v split v;exec notify-send 'tile vertically'
+bindsym $mod+q split toggle
+
+# toggle fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# toggle sticky
+bindsym $mod+Shift+s sticky toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+F9 scratchpad show
+
+#navigate workspaces next / previous
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
+# bindsym $mod+Ctrl+Right workspace next
+# bindsym $mod+Ctrl+Left workspace prev
+
+# Workspace names
+# set $ws1 "1"
+# set $ws2 "2"
+# set $ws3 "3"
+# set $ws4 "4"
+# set $ws5 "5"
+# set $ws6 "6"
+# set $ws7 "7"
+# set $ws8 "8"
+# set $ws9 "9"
+# set $ws10 "10"
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# Move focused container to workspace
+bindsym $mod+Ctrl+1 move container to workspace $ws1
+bindsym $mod+Ctrl+2 move container to workspace $ws2
+bindsym $mod+Ctrl+3 move container to workspace $ws3
+bindsym $mod+Ctrl+4 move container to workspace $ws4
+bindsym $mod+Ctrl+5 move container to workspace $ws5
+bindsym $mod+Ctrl+6 move container to workspace $ws6
+bindsym $mod+Ctrl+7 move container to workspace $ws7
+bindsym $mod+Ctrl+8 move container to workspace $ws8
+bindsym $mod+Ctrl+9 move container to workspace $ws9
+bindsym $mod+Ctrl+0 move container to workspace $ws10
+
+# Move to workspace with focused container
+bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
+
+# Open applications on specific workspaces
+assign [class="firefox"] $ws1
+assign [class="Code"] $ws3
+assign [class="dolphin"] $ws4
+assign [class="discord"] $ws8
+assign [class="TelegramDesktop"] $ws9
+assign [class="Audacious"] $ws10
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you want to exit' -b 'Yes' 'i3-msg exit' -f 'VictorMono Nerd Font'"
+
+#exit menu rofi
+bindsym $mod+Shift+l exec "~/.config/rofi/powermenu/powermenu.sh"
+
+# BINDING MODES
+#
+# config directive
+# mode [--pango_markup] <name>
+#
+# command
+# mode <name>
+#
+# Set shut down, restart and locking features
+# bindsym $mod+Shift+l mode "$mode_system"
+set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+    bindsym e exec --no-startup-id i3exit logout, mode "default"
+    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+
+    # exit system mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# Resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
+mode "resize" {
+        bindsym Left resize shrink width 8 px or 8 ppt
+        bindsym Down resize grow height 8 px or 8 ppt
+        bindsym Up resize shrink height 8 px or 8 ppt
+        bindsym Right resize grow width 8 px or 8 ppt
+
+        # exit resize mode: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+# Lock screen
+# bindsym $mod+Shift+L exec --no-startup-id i3lock
+
+# i3bar
+bar {
+        # i3bar COMMAND
+        # i3bar_command <command>
+
+        # Statusline COMMAND
+        # status_command <command>
+        # status_command i3status
+		status_command i3status
+
+        # DISPLAY MODE
+        # mode dock|hide|invisible
+        # hidden_state hide|show
+        # modifier <Modifier>|none
+
+        # Bar ID
+        # id <bar_id>
+
+        # Position
+        # position top|bottom
+        position top
+
+        # Output(s)
+        # output primary|nonprimary|<output>
+
+        # Tray output
+        # tray_output none|primary|<output>
+
+        # Tray padding
+        # tray_padding <px> [px]
+
+        # Font
+        # font <font>
+
+        # Custom separator symbol
+        # separator_symbol <symbol>
+        separator_symbol ":"
+	colors {
+        background $background
+		statusline $background
+		separator  $foreground
+        # <colorclass>   <border> <background> <text>
+		focused_workspace  $background $shade1 $background
+		active_workspace   $foreground $background $foreground
+		# inactive_workspace $foreground
+		urgent_workspace   $foreground $color1 $foreground
+		binding_mode       $foreground $background $foreground
+	}
+}
+
+# hide/unhide i3-bar
+bindsym $mod+m bar mode toggle
+
+# SCREEN BRIGHTNESS CONTROLS
+# using xbacklight
+bindsym XF86MonBrightnessUp exec "~/Scripts/brightness.sh -inc"; exec notify-send 'brightness up'
+bindsym XF86MonBrightnessDown exec "~/Scripts/brightness.sh -dec"; exec notify-send 'brightness down'
+
+# SOUND CONTROLS
+# using pactl in PulseAudio
+
+# i3status
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% && $refresh_i3status; exec notify-send 'volume up'
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1% && $refresh_i3status; exec notify-send 'volume down'
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status; exec notify-send 'audio mute'
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status; exec notify-send 'mic mute'
+
+# normal
+# bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1%
+# bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1%
+# bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+# bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+# i3 blocks
+# set $refresh_i3blocks pkill -RTMIN+10 i3blocks
+# bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3blocks
+# bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3blocks
+# bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3blocks
+
+## MUSIC CONTROLS - only for cmus
+bindsym XF86AudioPlay exec --no-startup-id "~/Scripts/music/play_pause.sh"
+bindsym XF86AudioStop exec --no-startup-id "~/Scripts/music/stop.sh"
+bindsym XF86AudioNext exec --no-startup-id "~/Scripts/music/next.sh"
+bindsym XF86AudioPrev exec --no-startup-id "~/Scripts/music/prev.sh"

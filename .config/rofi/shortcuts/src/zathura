@@ -1,0 +1,102 @@
+--= General =--
+J                       -> Go to next page
+Page Down               -> Go to next page
+K                       -> Go to previous page
+Page Up                 -> Go to previous page
+H                       -> Scroll to the left, down, up or right direction
+K                       -> Scroll to the left, down, up or right direction
+J                       -> Scroll to the left, down, up or right direction
+L                       -> Scroll to the left, down, up or right direction
+Arrow keys              -> Scroll to the left, down, up or right direction
+Ctrl + T                -> Scroll a half page left, down, up or right
+Ctrl + D                -> Scroll a half page left, down, up or right
+Ctrl + U                -> Scroll a half page left, down, up or right
+Ctrl + Y                -> Scroll a half page left, down, up or right
+T                       -> Scroll a full page left, down, up or right
+Ctrl + F                -> Scroll a full page left, down, up or right
+Ctrl + B                -> Scroll a full page left, down, up or right
+Space                   -> Scroll a full page left, down, up or right
+Shift + Space           -> Scroll a full page left, down, up or right
+Y                       -> Scroll a full page left, down, up or right
+G then G                -> Goto to the first page
+Shift + G               -> Go to last page
+N then Shift + G        -> Go to a specific page
+Shift + H               -> Go to top of the current page
+Shift + L               -> Go to bottom of the current page
+Ctrl + O                -> Move backward through the jump list
+Ctrl + I                -> Move forward through the jump list
+Ctrl + J                -> Bisect forward and backward between the last two jump points
+Ctrl + K                -> Bisect forward and backward between the last two jump points
+Ctrl + C                -> Abort
+Esc                     -> Abort
+A                       -> Adjust window in best-fit or width mode
+S                       -> Adjust window in best-fit or width mode
+/                       -> Search for text
+?                       -> Search for text
+N                       -> Search for the next result
+Shift + N               -> Search for the previous result
+O                       -> Open document
+Shift + O               -> Open document
+F                       -> Follow links
+Shift + F               -> Display link target
+:                       -> Enter command
+R                       -> Rotate by 90 degrees
+Ctrl + R                -> Recolor (grayscale and invert colors)
+Shift + R               -> Reload document
+Tab                     -> Show index and switch to Index mode
+D                       -> Toggle dual page view
+F5                      -> Switch to presentation mode
+F11                     -> Switch to fullscreen mode
+Ctrl + M                -> Toggle inputbar
+Ctrl + N                -> Toggle statusbar
++                       -> Zoom in
+-                       -> Zoom out
+=                       -> Zoom to the original size
+Z then I                -> Zoom in
+Z then O                -> Zoom out
+Z then 0                -> Zoom to the original size
+N then =                -> Zoom to size n
+M then Shift + X        -> Set a quickmark to a letter or number X
+' then Shift + X        -> Goto quickmark saved at letter or number X
+Q                       -> Quit
+--= Fullscreen mode =--
+J                       -> Go to next or previous page
+K                       -> Go to next or previous page
+Space                   -> Scroll a full page
+Shift + Space           -> Scroll down
+Backspace               -> Scroll up
+G then G                -> Go to the first page
+Shift + G               -> Go to the last page
+N then Shift + G        -> Go to a specific page
+Ctrl + C                -> Abort
+Esc                     -> Abort
+F11                     -> Switch to normal mode
++                       -> Zoom in
+-                       -> Zoom out
+=                       -> Zoom to the original size
+Z then I                -> Zoom in
+Z then O                -> Zoom out
+Z then 0                -> Zoom to the original size
+N then =                -> Zoom to size n
+Q                       -> Quit
+--= Presentation mode =--
+Space                   -> Scroll a full page
+Shift + Space           -> Scroll down
+Backspace               -> Scroll up
+Ctrl + C                -> Abort
+Esc                     -> Abort
+F5                      -> Switch to normal mode
+Q                       -> Quit
+** Index mode **
+K                       -> Move to upper or lower entry
+J                       -> Expand enrty
+L                       -> Expand all entries
+H                       -> Collapse entry
+Shift + H               -> Collapse all entries
+Space                   -> Select an open entry
+Enter                   -> Select an open entry
+--= Mouse bindings =--
+wheelupdown             -> Scroll up or down
+Ctrl + wheelupdown      -> Zoom in or out
+Right click + Move the mouse -> Pan the document
+Left click              -> Follow link

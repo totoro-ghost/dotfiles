@@ -1,0 +1,9 @@
+# CHANGING COLORS
+# <colorclass> <border> <background> <text> <indicator> <child_border>
+client.focused          #282a36 #282a36 #F8F8F2 #282a36   #282a36
+client.focused_inactive #21222c #21222c #F8F8F2 #21222c   #21222c
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.urgent           #21222c #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+
+client.background       #F8F8F2

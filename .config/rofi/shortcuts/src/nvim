@@ -1,0 +1,53 @@
+* Default Mappings
+
+space	is the *leader* key.
+
+** Opening terminals! **
+- Ctrl + l	Open terminal vertically over right
+- Ctrl + x	Open terminal horizontally below the current window
+
+** File tree (nvim-tree) **
+- Ctrl  + n	toggle neovim tree
+- Shift + h	show hidden files
+- Ctrl  + v	open files in vertical split
+- Ctrl  + x	open files in horizontal split
+
+** Toggling stuffs **
+- leader + n	toggle line number
+- leader + z	toggle truezen.nvim's Ataraxis mode
+- leader + m	toggle truezen.nvim's minimalistic mode
+
+** Copy text **
+- Ctrl + a	copies everything in the current file
+- select any text + y	copies the selected text
+
+** Telescope **
+- leader + f + b	open all buffers
+- leader + f + f	find files in the current DIR
+- leader + f + o	open recently edited files
+- leader + f + h	opens up a help page like thing
+- Ctrl   + v		open files in vertical split
+- Ctrl   + x		open files in horizontal split
+
+** Formatting code **
+- leader + f + m	formats or beautifies the code in current window via neoformat
+
+**Neoscroll**
+- `<C-u>`, `<C-d>`, `<C-b>`, `<C-f>`, `<C-y>` and `<C-e>`	Smooth scrolling for window movement commands.
+
+**Managing tabs with bufferline!**
+- TAB or Shift + TAB	cycle through opened tabs
+- Shift + x				close current tab
+- Shift + t				open new tab
+
+** Nvim-lspconfig (major ones)**
+-  K 			hover and show the definition
+-  gd			jumps to the definition (works for user and language definitions)
+-  [d			jumps to the previous error
+-  ]d			jumps to the next error
+- leader + D 	jumps to the definition
+- leader + w + q	list all the errors in a new buffer
+- leader + r + n	rename all instances of this definition (user functions and declaration)
+
+** Commenting **
+- leader + /	toggle

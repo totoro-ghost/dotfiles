@@ -1,0 +1,108 @@
+#!/usr/bin/env bash
+
+# rofi theme
+THEME="$HOME/.config/rofi/rofi-alacritty/theme.rasi"
+A_THEMES="$HOME/.config/alacritty/themes"
+
+declare -a options=(
+  " Change padding"
+  " Change Font"
+  " Change Opacity"
+  " Change color scheme"
+  " Profile 1"
+  " Profile 2"
+)
+
+declare -a fonts=(
+  "Hack"
+  "Iosevka Nerd Font"
+  "JetBrainsMono Nerd Font"
+  "VictorMono Nerd Font"
+)
+
+declare -a paddings=(
+  "0"
+  "10"
+  "20"
+  "40"
+  "60"
+)
+
+declare -a opacities=(
+  "0.0"
+  "0.2"
+  "0.4"
+  "0.5"
+  "0.6"
+  "0.8"
+  "1.0"
+)
+
+font() {
+  FONT=$(printf '%s\n' "${fonts[@]}" | rofi -theme "$THEME" -dmenu -p "")
+  if [ -n "$FONT" ]; then
+    alacritty-conf -f "$FONT"
+  fi
+}
+
+padding() {
+  PADDING=$(printf '%s\n' "${paddings[@]}" | rofi -theme "$THEME" -dmenu -p "")
+  if [ -n "$PADDING" ]; then
+    alacritty-conf -p "$PADDING"
+  fi
+}
+
+opacity() {
+  OPACITY=$(printf '%s\n' "${opacities[@]}" | rofi -theme "$THEME" -dmenu -p "")
+  if [ -n "$OPACITY" ]; then
+    alacritty-conf -o "$OPACITY"
+  fi
+}
+
+color-scheme() {
+  COLOR_SCHEME=$('ls' -1 $A_THEMES | sed -e 's|.yml||' -e 's|.yaml||' | rofi -theme "$THEME" -dmenu -p "")
+  alacritty-conf -c "$COLOR_SCHEME"
+}
+
+main() {
+
+  # Get choice from rofi
+  choice=$(printf '%s\n' "${options[@]}" | rofi -dmenu -i -fuzzy -p "" -theme "$THEME")
+
+  # If user has not picked anything, exit
+  if [[ -z "${choice// /}" ]]; then
+    exit 1
+  fi
+
+  # run the selected command
+  case $choice in
+  ' Change padding')
+    padding
+    exit 0
+    ;;
+  ' Change Font')
+    font
+    exit 0
+    ;;
+  ' Change Opacity')
+    opacity
+    exit 0
+    ;;
+  ' Change color scheme')
+    color-scheme
+    exit 0
+    ;;
+  ' Profile 1')
+    alacritty-conf -f "Iosevka Nerd Font" -c "gruvbox_dark" -p 40 -o 1
+    exit 0
+    ;;
+  ' Profile 2')
+    alacritty-conf -f "JetBrainsMono Nerd Font" -c "one_dark" -p 40 -o 1
+    exit 0
+    ;;
+
+  esac
+}
+
+main
+exit 0

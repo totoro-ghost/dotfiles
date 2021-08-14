@@ -1,0 +1,328 @@
+## Configuration file for XAVA. Default values are commented out. Use either ';' or '#' for commenting.
+
+
+[general]
+
+# Accepts only non-negative values.
+; framerate = 60
+
+# Keep the application in sync with the monitor to prevent tearing
+# It's generally recommended to keep it on, as different framerates may lead to unstable frametimes
+# -1 = adaptive Vsync (G-Sync. FreeSync, etc.)
+# 0 = off
+# 1 up to refresh rate = refresh at the refresh rate of the monitor divided by the number given
+; vsync = 1
+
+# 'autosens' will attempt to balance the sensitivity to keep the amplitude of the bars 
+# within a reasonable range
+; autosens = true
+
+# 'overshoot' allows bars to overshoot (in % of display height) without initiating autosens
+; overshoot = 0 
+
+# Manual sensitivity in %. Autosens must be turned off for this to take effect.
+# 200.0 means double height and so on. Accepts only non-negative values.
+; sensitivity = 100.0
+
+# The number of bars. 0 sets it to auto (put as many as you can).
+# Bars' width and space between bars in number of pixels on screen.
+bars = 60
+; bar_width = 13
+; bar_spacing = 5
+
+
+[window]
+
+# Window width and height
+; width = 1180
+; height = 300
+
+# Fullscreen toggle
+fullscreen = false
+
+# Enables or disables window borders 
+; border = false
+
+# Window transparency toggle (your system must support transparent windows)
+; transparency = true
+
+# Keeps the window under any other
+; keep_below = true
+
+# This option aligns the window with a certain part of the screen
+# The following positions are supported:
+# top_left, top, top_right, left, center, right, bottom_left,
+# bottom, bottom_right and none if you don't want manual positioning
+; alignment = 'bottom'
+
+# Additionally we can further adjust the position if needed (in pixels)
+# It moves the window the opposite direction of whats in alignment
+# FXP. if alignment is set to right and x_padding is 20, 
+# it will move the window left 20 pixels and so on for every direction 
+; x_padding = -1000
+; y_padding = 0
+
+# This option removes the ability to interact with the window
+interactable = true
+
+# Create an taskbar icon
+; taskbar_icon = true
+
+
+[x11]
+
+# Hacks and options related to X11 and GLX output modes
+
+# Draw directly on the root window (or wallpaper) itself
+# You need to stop any form of compositing for this to even work properly
+; root_window = false
+
+# Sets the override any redirection by the host WM, that is the window cannot change
+# the it's order in the window stack
+# This option also disables any form of interaction with the window - same as when:
+#    interacable = false
+; override_redirect = false
+
+# This allows XAVA to restart when the display settings are changed
+# As this can cause constant reloading (https://github.com/nikp123/xava/issues/20)
+# it is left off by default (X11 only)
+; reload_on_display_configure = false
+
+# This option lets you choose a specific monitor that XAVA should occupy
+# The name of the monitor is exactly the same as that of in XRandr 
+# Examples being: HDMI1, VGA-1
+#
+# If no value has been specified, XAVA treats the whole display area as a single
+# monitor (if that makes sense :\)
+; monitor_name = none
+
+
+[wayland]
+
+# Hacks and options related to the Wayland output mode
+
+# Run the visualizer at "wallpaper"-level
+# This makes sure that the visualizer stays behind every window.
+# Enabling this automatically disables all of your inputs since
+# it acts like a wallpaper, go figure. Use UNIX (kill code)
+# signaling in order to reset or end XAVA.
+#
+# HOWEVER: This only works for compositors supporting zwlr_layer_shell
+# version 1 or above. This mostly includes wlroots-based compositors.
+# GNOME and KDE won't cut it here, I believe.
+# 
+# As for when this is disabled, XAVA spawns a XDG window, but a lot of
+# features are missing:
+#  - keyboard and mouse input
+#  - window borders (be it client-side or server-side)
+#  - fullscreen mode
+#  - non-transparent windows (just use background_opacity instead lol)
+#  - any kind of GPU acceleration
+#  - window positioning logic
+#  - taskbar icon
+#
+# Also in XDG, XAVA may crash when resizing the window due to buffer
+# related issues (If this bothers you, an issue or PR would be appreciated)
+; background_layer = true
+
+# When background_layer is enabled, this options offers you to select
+# which monitor XAVA should occupy (examples: eDP-1, HDMI-A-1...) 
+#
+# Specifying an invalid monitor would cause XAVA to fall back onto the
+# last monitor available
+; monitor_name = 0
+
+
+[gl]
+
+# Hacks and options related to the '*_gl' and '*_egl' output modes
+
+# XAVA's OpenGL and EGL renderers are split into two rendering pipelines:
+# the "pre" and "post" rendering, that's why there are two shaders
+
+# The following options allow for users to change their visualizer via
+# different "shaderpacks" which work just the same as they do on
+# Minecraft Optifine
+
+# The pre renderer is responsible for shading the visualizer BEFORE 
+# the bars are drawn, this allows the shader developer to adjust the
+# way that the bars are drawn on the screen
+; pre_shaderpack = default
+
+# Meanwhile the post rendering/shading is responsible for adjusting the
+# look of the visualizer AFTER the bars have been drawn (fxp. adding
+# shadows via depth buffer trickery)
+; post_shaderpack = default
+
+
+[input]
+
+# Audio capturing method. Possible methods are the ones listed below.
+# If one doesn't work, it might not be supported by your system or it just wasn't compiled with it.
+#
+# All input methods uses the same config variable 'source'
+# to define where it should get the audio.
+#
+# For pulseaudio 'source' will be the source. Default: 'auto', which uses the monitor source of the default sink
+# (all pulseaudio sinks(outputs) have 'monitor' sources(inputs) associated with them).
+# 
+# For alsa, wasapi and portaudio 'source' will be the capture device.
+# For fifo 'source' will be the path to fifo-file.
+#
+# In case of wasapi, specify 'loopback' to capture audio from the system or anything else 
+# to capture from an input device, such as a microphone
+#
+# You can also specify 'list' as the source to portaudio to list all available audio devices
+; method = pulseaudio
+; source = auto
+
+; method = portaudio
+; source = auto
+
+; method = alsa
+; source = hw:Loopback,1
+
+; method = sndio
+; source = 
+
+; method = shmem
+; source = /squeezelite-00:00:00:00:00:00 
+
+; method = fifo
+; source = /tmp/mpd.fifo
+
+; method = wasapi
+; source = loopback
+
+# Adjusts the input buffer size (in samples, calculated by 2^input_size)
+; size = 12
+
+
+[output]
+
+# Output method. Can be any of the following (if supported):
+# By default it's the window that is recommended for your platform/OS.
+# 'sdl' is for a graphical window using SDL2
+# 'x11' is for a X11 window
+# 'glx' is for a X11 window using OpenGL 
+# 'win' is for a WIN32 window using OpenGL
+# 'wayland' is for a Wayland surface (ZWLR or XDG)
+; method = x11
+
+# Visual channels. Can be 'stereo' or 'mono'.
+# 'stereo' mirrors both channels with low frequencies in center.
+# 'mono' averages both channels and outputs left to right lowest to highest frequencies.
+; channels = mono
+
+
+[color]
+
+# Colors can be one of seven predefined: black, blue, cyan, green, magenta, red, white, yellow.
+# Or defined by hex code '#xxxxxx' (hex code must be within '').
+# It can also be 'default' at which point under X11 it reads the color off of Xrdb
+# Under Windows it uses your system accent color
+# And on SDL2 it's just black and cyan (default colorscheme)
+; background = default
+; foreground = default
+
+# This adjusts the opacity of the bars (must have transparency and OpenGL in order for it to work)
+; foreground_opacity = 1.0
+
+# And this does the same but for the background (previous rule applies here as well) 
+; background_opacity = 0.0
+
+# Gradient mode, only hex defined colors are supported, background must also be defined in hex
+# or remain commented out.
+# To enable gradients, just change gradient_count to the number of colors you have specified
+# (0 = disabled)
+gradient_count = 4
+; gradient_color_1 = '#a3be8c'
+; gradient_color_2 = '#ebcb8b'
+; gradient_color_3 = '#d08770'
+; gradient_color_4 = '#bf616a'
+
+gradient_color_1 = '#8fbcbb'
+gradient_color_2 = '#88c0d0'
+gradient_color_3 = '#81a1c1'
+gradient_color_4 = '#5e81ac'
+
+[shadow]
+
+# Fake shadow effect (works with transparency only)
+# To disable shadows, set size to 0
+; size = 7
+
+# Color format is #aarrggbb
+; color = "#ff000000"
+
+
+[stars]
+
+# For stars to work, you need a speical output mode that supports it
+# One such mode is "x11_stars"
+
+# Controls the number of stars on screen
+; count = 100
+
+# Controls how reactive the stars are to changess in sound (exponential)
+; sensitivity = 1.2
+
+# Linearly multiples the resulting star velocity
+; velocity = 1.0
+
+
+[filter]
+
+# These are settings related to the audio processing engine, or a audio "filter"
+
+# Pick which "audio filter" to use
+; name = "default"
+
+# Lower and higher cutoff frequencies for lowest and highest bars
+# the bandwidth of the visualizer.
+# XAVA will automatically increase the higher cutoff if a too low band is specified.
+; lower_cutoff_freq = 26
+; higher_cutoff_freq = 15000
+
+# Percentage value for integral smoothing. Takes values from 0 - 100.
+# Higher values means smoother, but less precise. 0 to disable.
+integral = 80
+
+# Disables or enables the so-called "Monstercat smoothing" with or without "waves".
+# Set to 0 to disable (default).
+; monstercat = 1.0
+; waves = 0
+
+# Set gravity percentage for "drop off". Higher values means bars will drop faster.
+# Accepts only non-negative values. 50 means half gravity, 200 means double.
+# Set to 0 to disable "drop off".
+; gravity = 100
+
+# In bar height, bars that would have been lower that this (in pixels) will not be drawn.
+; ignore = 0
+
+# Adjust the logarithmic scale of the frequency band (the lower the value, 
+# the less difference between bars in frequency)
+; log = 1.55
+
+# Average out the value of each ~~odd~~ even bar (just like the monstercat visualizer)
+; oddoneout = true
+
+# Balances the eq towards higher or lower frequencies
+# lower value->lower frequencies, higher value->higher frequencies
+; eq_balance = 0.67
+
+# Adjusts the FFT buffer size (calculated by 2^fft_size)
+; fft_size = 14
+
+
+[eq]
+
+# This one is tricky. You can have as much keys as you want.
+# Remember to uncomment more then one key! More keys = more precision.
+# Look at readme.md on github for further explanations and examples.
+; 1 = 1 # bass
+; 2 = 1
+; 3 = 1 # midtone
+; 4 = 1
+; 5 = 1 # treble

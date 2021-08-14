@@ -1,0 +1,12 @@
+/* colors */
+
+* {
+	background-color:            #282a36;
+	text-color:                  #f8f8f2;
+	selbg:                       #bd93f9;
+	actbg:                       #44475a;
+	urgbg:                       #bf616a;
+	winbg:                       #bd93f9;
+	
+
+}

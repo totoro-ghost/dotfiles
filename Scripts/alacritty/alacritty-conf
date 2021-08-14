@@ -1,0 +1,131 @@
+#!/usr/bin/env bash
+
+CONFIG="$HOME/.config/alacritty/alacritty.yml"
+# CONFIG="$HOME/Scripts/alacritty/alacritty.yml"
+THEME_DIR="$HOME/.config/alacritty/themes"
+
+usage() {
+    if [ -n "$1" ]; then
+        echo "alacritty-conf: unrecognized option '$1'"
+    fi
+    echo "Usage: alacritty-conf [options] [value] ..."
+    echo "    -h or --help              Show help."
+    echo "    -c or --color <value>     Set color-scheme."
+    echo "    -o or --opacity <value>   Set opacity."
+    echo "    -p or --padding <value>   Set padding."
+    echo "    -f or --font <value>      Set font."
+}
+
+set_opacity() {
+    sed -i "/^background_opacity:.*/c\background_opacity: $1" "$CONFIG"
+    touch "$CONFIG"
+}
+
+set_padding() {
+    sed -i '/^  padding/,/    x:.*/c\  padding:' "$CONFIG"
+    sed -i "/^  padding/,/    y:.*/c\  padding:\n    x: $1\n    y: $1" "$CONFIG"
+    touch "$CONFIG"
+}
+
+set_color() {
+    sed -i '/^## BEGIN-COLOR/,/^## END-COLOR/{/^## BEGIN-COLOR/!{/^## END-COLOR/!d}}' "$CONFIG"
+    sed -i '/^## END-COLOR/c\\n## END-COLOR' "$CONFIG"
+    sed -e "/^## BEGIN-COLOR/{r $1" -e '}' -i "$CONFIG"
+    touch "$CONFIG"
+}
+
+set_font() {
+    sed -i "/^    family:.*/c\    family: $1" "$CONFIG"
+    touch "$CONFIG"
+}
+
+#POSITIONAL=()
+while [[ $# -gt 0 ]]; do
+    key="$1"
+
+    case $key in
+    -h | --help)
+        usage
+        exit 0
+        ;;
+    -p | --padding)
+        PADDING="$2"
+        shift # past argument
+        shift # past value
+        ;;
+    -o | --opacity)
+        OPACITY="$2"
+        shift # past argument
+        shift # past value
+        ;;
+    -c | --color)
+        COLOR="$2"
+        shift # past argument
+        shift # past value
+        ;;
+    -f | --font)
+        FONT="$2"
+        shift # past argument
+        shift # past value
+        ;;
+    *) # unknown option
+        usage "$1"
+        exit 1
+        #POSITIONAL+=("$1") # save it in an array for later
+        #shift # past argument
+        ;;
+    esac
+done
+
+# echo "PADDING: $PADDING"
+# echo "OPACITY: $OPACITY"
+# echo "COLOR: $COLOR"
+# echo "FONT: $FONT"
+
+if [ -n "$OPACITY" ]; then
+    regex1='^[0-9]+([.][0-9]+)?$'
+    if ! [[ "$OPACITY" =~ $regex1 ]]; then
+        echo "error: -o|--opacity need a number between range 0.0 - 1.0" >&2
+        exit 1
+    elif (($(echo "$OPACITY > 1" | bc -l))) || (($(echo "$OPACITY < 0" | bc -l))); then
+        echo "error: -o|--opacity need a number between range 0.0 - 1.0" >&2
+        exit 1
+    else
+        echo "Setting opacity..."
+        set_opacity "$OPACITY"
+    fi
+fi
+
+if [ -n "$PADDING" ]; then
+    regex2='^[0-9]+$'
+    if ! [[ "$PADDING" =~ $regex2 ]]; then
+        echo "error: -o|--padding need a number." >&2
+        exit 1
+    else
+        echo "Setting padding..."
+        set_padding "$PADDING"
+    fi
+fi
+
+if [ -n "$COLOR" ]; then
+    if [ -f "$THEME_DIR/$COLOR.yml" ]; then
+        echo "Color scheme exists. Applying..."
+        set_color "$THEME_DIR/$COLOR.yml"
+    elif [ -f "$THEME_DIR/$COLOR.yaml" ]; then
+        echo "Color scheme exists. Applying..."
+        set_color "$THEME_DIR/$COLOR.yaml"
+    else
+        echo "Color scheme dosen't exists."
+    fi
+fi
+
+if [ -n "$FONT" ]; then
+    if fc-list | grep -i "$FONT" >/dev/null; then
+        echo "Setting font."
+        set_font "$FONT"
+    else
+        echo "\"$FONT\" font not found."
+    fi
+fi
+
+exit 0

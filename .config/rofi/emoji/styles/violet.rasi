@@ -1,0 +1,10 @@
+/* colors */
+
+* {
+	background-color:            #000000;
+	text-color:                  #ffffff;
+	selbg:                       #892cdc;
+	actbg:                       #52057b;
+	urgbg:                       #bf616a;
+	winbg:                       #ffffff;
+}

@@ -1,0 +1,54 @@
+--=[square brackets] are the config action names=--
+a [toggle_actions]              => Toggle actions display (see --draw-actions)
+A [toggle_aliasing]             => Enable/Disable anti-aliasing
+c [toggle_caption]              => Caption entry mode.  If --caption-path has been specified, thenthis enables caption editing.  The caption at the bottom of thescreen will turn yellow and can be edited.  Hit return to confirmand save the caption, or escape to cancel editing.  Note that youcan insert an actual newline into the caption using<CTRL+return>.
+d [toggle_filenames]            => Toggle filename display (see --draw-filename)
+e [toggle_exif]                 => (only if compiled with exif=1) Toggle EXIF tag display
+f [save_filelist]               => Save the current filelist as "feh_PID_ID_filelist"
+h [toggle_pause]                => Pause/Continue the slideshow.  When it is paused, it will notautomatically change slides based on --slideshow-delay.
+i [toggle_info]                 => Toggle info display (see --info)
+k [toggle_keep_vp]                 => Toggle zoom and viewport keeping. When enabled, feh will keepzoom and X, Y offset when switching images.
+m [toggle_menu]                    => Show menu.  Use the arrow keys and return to select items,<escape> to close the menu.
+n, <Space>, <Right> [next_img]     => Show next image
+o [toggle_pointer]                 => Toggle pointer visibility
+p, <Backspace>, <Left> [prev_img]  => Show previous image
+q, <Escape> [quit]              => Quit feh
+r [reload_image]                => Reload current image.  Useful for webcams
+s [save_image]                  => Save the current image as "feh_PID_ID_FILENAME"
+v [toggle_fullscreen]           => Toggle fullscreen
+w [size_to_image]               => Change window size to fit current image size
+x [close]                       => Close current window
+z [jump_random]                 => Jump to a random position in the current filelist
+<, > [orient_3, orient_1]       => In place editing - rotate the images 90 degrees(counter)clockwise.  The rotation is lossless, but may createartifacts in some image corners when used with JPEG images.Rotating in the reverse direction will make them go away.  Seejpegtran(1) for more about lossless JPEG rotation.  Note:jpegtran does not update EXIF orientation tags. However, fehassumes that you use the feature to normalize image orientationand want it to be displayed this way everywhere. After everyrotation, it will unconditionally set the EXIF orientation to 1("0,0 is top left").  Should you need to reverse this, seejpegexiforient(1).
+_ [flip]                        => In place editing - vertical flip
+| [mirror]                      => In place editing - horizontal flip.  Again, see jpegtran(1) formore information.
+0 .. 9 [action_0 .. action_9]   => Execute the corresponding action (0 = --action, 1 = --action1etc.)
+<Return> [action_0]             => Run the command defined by --action
+<home> [jump_first]             => Show first image
+<end> [jump_last]               => Show last image
+<page up> [jump_fwd]            => Go forward ~5% of the filelist
+<page down> [jump_back]         => Go backward ~5% of the filelist
++ [reload_plus]                 => Increase reload delay by 1 second
+- [reload_minus]                => Decrease reload delay by 1 second
+<delete> [remove]               => Remove current file from filelist
+<CTRL+delete> [delete]          => Remove current file from filelist and delete it
+<keypad left>, <Ctrl+Left> [scroll_left]        => Scroll to the left
+<keypad right>, <Ctrl+Right> [scroll_right]     => Scroll to the right
+<keypad up>, <Ctrl+Up> [scroll_up]              => Scroll up
+<keypad down>, <Ctrl+Down> [scroll_down]        => Scroll down.  Note that the scroll keys work withoutanti-aliasing for performance reasons, hit the render key afterscrolling to antialias the image.
+<Alt+Left [scroll_left_page]>                   => Scroll to the left by one page
+<Alt+Right [scroll_right_page]>                 => Scroll to the right by one page
+<Alt+Up [scroll_up_page]>                       => Scroll up by one page
+<Alt+Down [scroll_down_page]>                   => Scroll down by one page
+R, <keypad begin> [render]                      => Antialias the image
+<keypad +>, <Up> [zoom_in]                      => Zoom in
+<keypad ->, <Down> [zoom_out]                   => Zoom out
+*, <keypad *> [zoom_default]                    => Zoom to 100%
+/, <keypad /> [zoom_fit]                        => Zoom to fit the window size
+--=MENU KEYS=--
+<Escape> [menu_close]            => Close the menu
+<Up> [menu_up]                   => Highlight previous menu item
+<Down> [menu_down]               => Highlight next menu item
+<Left> [menu_parent]             => Highlight parent menu item
+<Right> [menu_child]             => Highlight child menu item
+<Return>, <Space> [menu_select]  => Select highlighted menu item

@@ -1,0 +1,18 @@
+/* colors */
+
+* {
+	background-color:            #2e3440;
+	text-color:                  #eceff4;
+	selbg:                       #66cccc;
+	actbg:                       #4c566a;
+	urgbg:                       #bf616a;
+	winbg:                       #66cccc;
+	
+	background:                     #282c34;
+    background-alt:                 #3f4451;
+    foreground:                     #eceff4;
+    border:               			#88c0d0;
+    border-alt:               		#DA717F;
+    selected:               		#4f5666;
+    urgent:                         #DA4453;
+}

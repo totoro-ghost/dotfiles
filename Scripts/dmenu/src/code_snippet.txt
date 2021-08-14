@@ -1,0 +1,4 @@
+Find All elf executables @find . -exec file {} \; | grep -i elf
+Delete all efl executable files @find . -exec file {} \; | grep -i elf | cut -d: -f1 | xargs -I{} rm {}
+Delete all .vscode files @find . -type d -name ".vscode" | xargs -I{} rm -r {}
+Delete all .exe executables @find . -type f -name "*.exe" | xargs -I{} rm {}

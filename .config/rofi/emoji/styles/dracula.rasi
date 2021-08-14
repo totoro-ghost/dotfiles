@@ -1,0 +1,11 @@
+
+/* colors */
+
+* {
+	background-color:            #282A36;
+	text-color:                  #d7dae0;
+	selbg:                       #c6bcee;
+	actbg:                       #282A36;
+	urgbg:                       #bf616a;
+	winbg:                       #c6bcee;
+}

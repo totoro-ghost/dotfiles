@@ -1,0 +1,6 @@
+configuration {
+	theme: "./rofi-themes/Official Themes/Arc-Dark.rasi";
+	modi: "bookmarks:~/.config/rofi/rofi-bookmarks/rofi-bookmarks.py";
+	show-icons: true;
+	icon-theme: "WhiteSur-grey-dark";
+}

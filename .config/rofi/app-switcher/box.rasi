@@ -1,0 +1,119 @@
+configuration {
+    font: "Iosevka:style=Bold 12";
+    icon-theme: "WhiteSur-grey-dark";
+    show-icons: true;
+    disable-history: false;
+    fullscreen: false;
+    hide-scrollbar: true;
+    sidebar-mode: false;
+    display-window: "";
+    window-format : "{title}";
+    window-thumbnail: false;
+}
+
+/* Dracula */
+
+* {
+    background: #44475a;
+    background-alt: #282A36;
+    background-bar: #282A36;
+    foreground: #f8f8f2;
+    accent: #44475a;
+    border: #bd93f9;
+    selected: #6272a4;
+    font: "Iosevka Nerd Font 14";
+}
+
+window {
+    transparency: "real";
+    background-color: @background;
+    text-color: @foreground;
+    border: 3px;
+    border-color: #3b4252;
+    border-radius: 12px;
+    height: 23%;
+    //width: 80%;
+    location: center;
+    x-offset: 0;
+    y-offset: 0;
+}
+
+prompt {
+    enabled: true;
+    padding: 0.25% 0.75% 0% -0.25%;
+    background-color: @background-alt;
+    text-color: @foreground;
+    font: "Iosevka Nerd Font 14";
+}
+
+entry {
+    background-color: @background-alt;
+    text-color: @foreground;
+    placeholder-color: @foreground;
+    expand: true;
+    horizontal-align: 0;
+    placeholder: "Switch to...";
+    padding: -0.15% 0% 0% 0%;
+    blink: true;
+    font: "Iosevka Nerd Font 14";
+}
+
+inputbar {
+    children: [ prompt, entry];
+    background-color: @background-bar;
+    text-color: @foreground;
+    expand: false;
+    border: 0.3% 0% 0.3% 0%;
+    border-radius: 100%;
+    border-color: @accent;
+    margin: 0% 0% 0% 0%;
+    //padding: 1.25%;
+}
+
+listview {
+    background-color: @background-alt;
+    columns: 5;
+    row: 1;
+    spacing: 0%;
+    cycle: true;
+    dynamic: true;
+    layout: vertical;
+}
+
+mainbox {
+    background-color: @background-alt;
+    border: 0% 0% 0% 0%;
+    border-radius: 0% 0% 0% 0%;
+    border-color: @accent;
+    children: [ inputbar, listview];
+    spacing: 2%;
+    padding: 3% 1.5% 0% 1.5%;
+}
+
+element {
+    background-color: @background-alt;
+    text-color: @foreground;
+    orientation: vertical;
+    border-radius: 0%;
+    padding: 2% 0% 2% 0%;
+}
+
+element-icon {
+    size: 64px;
+    border: 0px;
+}
+
+element-text {
+    expand: true;
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    margin: 0.5% 0.5% -0.5% 0.5%;
+}
+
+element selected {
+    background-color: @selected;
+    text-color: @foreground;
+    border: 0% 0% 0.3% 0%;
+    border-radius: 5px;
+    border-color: @border;
+}
