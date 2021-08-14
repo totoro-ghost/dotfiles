@@ -1,6 +1,6 @@
 ## Description of Scripts
 
-- `dmconf` - this file contains config of how dmenu will look
+- `dconf` - this file contains config of how dmenu will look
 - `dman.sh` - get random manual page, or search for one
 - `dmbookmarks.sh` - show all firefox bookmarks
 - `dmbooks.sh` - get list of all files in a dir, and select one from them to open with a pdf viewer
