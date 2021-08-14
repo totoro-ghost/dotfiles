@@ -56,8 +56,18 @@ If anything is missing open an issue.
 
 ## 📸 Screenshot 
 
-![ss](screenshots/ss.png)
+|firefox|neofetch and neovim|
+|-|-|
+|![firefox](screenshots/1.png) | ![fetch](screenshots/2.png)|
 
-<p align="center">
+|file manager & cat-notification|rofi-launcher|
+|-|-|
+|![fileman](screenshots/3.png)|![rofi](screenshots/4.png)|
 
-</p>
+|audacious & xava|vscode & rofi-notif|
+|-|-|
+|![audacious](screenshots/5.png)|![rofi-notif](screenshots/6.png)|
+
+|i3-lock|sddm-login-manager|
+|-|-|
+|![i3lock](screenshots/7.png)|![sddm-login-manager](screenshots/8.png)|
