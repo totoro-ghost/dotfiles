@@ -1,0 +1,24 @@
+@import url("userChrome.css");
+
+/* Removes white loading page */
+@-moz-document url(about:blank), url(about:newtab), url(about:home) {
+    html:not(#ublock0-epicker), html:not(#ublock0-epicker) body, #newtab-customize-overlay {
+      background: var(--mff-bg) !important;
+    }
+  }
+
+  @-moz-document url(about:newtab), url(about:home){
+    
+    .tile{
+      background-color: #282a36 !important;
+    }
+    .personalize-button{
+      display: none !important;
+    }
+    /* .personalize-button{
+      background-color: #282a36 !important;
+    }
+    .personalize-button:hover{
+      background-color: #9c89b8 !important;
+    } */
+}

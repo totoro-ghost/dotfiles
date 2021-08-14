@@ -1,0 +1,115 @@
+:root {
+    /* Minimal Functional Fox variables*/
+    --mff-bg: #282a36;
+    --mff-icon-color: #e0fbfc;
+    --mff-nav-toolbar-padding: 8px;
+    --mff-sidebar-bg: var(--mff-bg);
+    --mff-sidebar-color: #e0fbfc;
+    --mff-tab-border-radius: 0px;
+    --mff-tab-color: #fefefa;
+    --mff-tab-font-family: "VictorMono Nerd Font", sans;
+    --mff-tab-font-size: 11pt;
+    --mff-tab-font-weight: 400;
+    --mff-tab-height: 32px;
+    --mff-tab-pinned-bg: #70c1b3;
+    --mff-tab-selected-bg: #ee6c4d;
+    --mff-tab-soundplaying-bg: #9c89b8;
+    --mff-urlbar-color: #98c1d9;
+    --mff-urlbar-focused-color: #e0fbfc;
+    --mff-urlbar-font-family: "VictorMono Nerd Font", serif;
+    --mff-urlbar-font-size: 12pt;
+    --mff-urlbar-font-weight: 700;
+    --mff-urlbar-results-color: #e0fbfc;
+    --mff-urlbar-results-font-family: "VictorMono Nerd Font", serif;
+    --mff-urlbar-results-font-size: 12pt;
+    --mff-urlbar-results-font-weight: 700;
+    --mff-urlbar-results-url-color: #98c1d9;
+    /*   --mff-tab-selected-bg: linear-gradient(90deg, rgba(232,74,95,1) 0%, rgba(255,132,124,1) 50%, rgba(254,206,168,1) 100%); */
+    /*   --mff-urlbar-font-weight: 600; */
+    /* Overriden Firefox variables*/
+    --autocomplete-popup-background: var(--mff-bg) !important;
+    --default-arrowpanel-background: var(--mff-bg) !important;
+    --default-arrowpanel-color: #fefefa !important;
+    --lwt-toolbarbutton-icon-fill: var(--mff-icon-color) !important;
+    --panel-disabled-color: #f9f9fa80;
+    --toolbar-bgcolor: var(--mff-bg) !important;
+    --urlbar-separator-color: transparent !important;
+}
+
+.tab-text {
+    font-family: var(--mff-tab-font-family);
+    font-weight: var(--mff-tab-font-weight);
+    font-size: var(--mff-tab-font-size) !important;
+    color: var(--mff-tab-color);
+}
+
+#tabbrowser-tabs {
+    --tab-line-color: #282a36 !important;
+}
+
+#urlbar-results {
+    font-family: var(--mff-urlbar-results-font-family);
+    font-weight: var(--mff-urlbar-results-font-weight);
+    font-size: var(--mff-urlbar-results-font-size) !important;
+    /* color: var(--mff-urlbar-results-color) !important; */
+}
+
+.urlbarView-url,
+.search-panel-one-offs-container {
+    /* color: var(--mff-urlbar-results-url-color) !important; */
+    font-family: var(--mff-urlbar-font-family);
+    font-weight: var(--mff-urlbar-results-font-weight);
+    font-size: var(--mff-urlbar-font-size) !important;
+}
+
+#urlbar-input {
+    font-size: var(--mff-urlbar-font-size) !important;
+    /* color: var(--mff-urlbar-color) !important; */
+    font-family: var(--mff-urlbar-font-family) !important;
+    font-weight: var(--mff-urlbar-font-weight)!important;
+    text-align: center !important;
+}
+
+toolbar {
+    background-image: none !important;
+}
+
+#urlbar-background {
+    opacity: .98 !important;
+}
+
+#navigator-toolbox,
+toolbaritem {
+    border: none !important;
+}
+
+#urlbar-background {
+    background-color: var(--mff-bg) !important;
+    border: none !important;
+}
+
+.toolbar-items {
+    background-color: var(--mff-bg) !important;
+}
+
+.urlbarView-row[type="bookmark"]>span {
+    color: green !important;
+}
+
+.urlbarView-row[type="switchtab"]>span {
+    color: orange !important;
+}
+
+#urlbar {
+    max-width: 70% !important;
+    margin: 0 15% !important;
+    /* 	position: unset!important; */
+    ;
+}
+
+
+/* This positions the tabs under the navaigator container */
+
+#titlebar {
+    -moz-box-ordinal-group: 3 !important;
+}
