@@ -43,6 +43,7 @@ You can take parts of what you like.
 - [rofi scripts](./.config/rofi)
 - [polybar config](./.config/polybar)
 - [wallpaper](./screenshots/lighthouse.png)
+- [sddm-theme](https://github.com/totoro-ghost/sddm-astronaut)
 
 ... and others.
 
