@@ -57,8 +57,6 @@ If anything is missing open an issue.
 
 <p align="center">
 
-## ✉ License 
-
 <a href="./license"> <img height="40px" src="https://img.shields.io/static/v1?label=license&message=WTFPL&color=bf616a&labelColor=2e3440&style=for-the-badge"> </a>
 
 </p>
