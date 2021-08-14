@@ -35,11 +35,19 @@ choice=$(printf '%s\n' "${options[@]}" |
 
 case $choice in
 'dunst - restart')
-    notify-send 'restart dunst'
-    # ~/Scripts/wallpaper.sh
+    if pgrep -x "dunst" >/dev/null; then
+        pkill dunst
+        dunst
+    else
+        dunst
+    fi
     ;;
-"notify-send 'DUNST_COMMAND_TOGGLE'")
-    ~/Scripts/firefox/tabs.sh -save
+"dunst - toggle visibility")
+    if pgrep -x "dunst" >/dev/null; then
+        dunstctl set-paused toggle
+    else
+        dunst
+    fi
     ;;
 "picom - kill")
     pkill picom
