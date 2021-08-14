@@ -58,16 +58,16 @@ If anything is missing open an issue.
 
 |firefox|neofetch and neovim|
 |-|-|
-|![firefox](screenshots/1.png) | ![fetch](screenshots/2.png)|
+|<img height="200px" src="screenshots/1.png">|<img height="200px" src="screenshots/2.png">|
 
 |file manager & cat-notification|rofi-launcher|
 |-|-|
-|![fileman](screenshots/3.png)|![rofi](screenshots/4.png)|
+|<img height="200px" src="screenshots/3.png">|<img height="200px" src="screenshots/4.png">|
 
 |audacious & xava|vscode & rofi-notif|
 |-|-|
-|![audacious](screenshots/5.png)|![rofi-notif](screenshots/6.png)|
+|<img height="200px" src="screenshots/5.png">|<img height="200px" src="screenshots/6.png">|
 
 |i3-lock|sddm-login-manager|
 |-|-|
-|![i3lock](screenshots/7.png)|![sddm-login-manager](screenshots/8.png)|
+|<img height="200px" src="screenshots/7.png">|<img height="200px" src="screenshots/8.png">|
