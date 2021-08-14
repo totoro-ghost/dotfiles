@@ -41,12 +41,12 @@ You can take parts of what you like.
 - [neofetch config](./.config/neofetch/config.conf)
 - [starship config](./.config/starship.toml)
 - [rofi scripts](./.config/rofi)
-- [polybar config](./config/polybar)
+- [polybar config](./.config/polybar)
 - [wallpaper](./screenshots/lighthouse.png)
 
 ... and others.
 
-If anything is missing open an issue.
+If anything is missing open an issue 🛠.
 
 ### 🖥 Fonts used
 
@@ -58,16 +58,28 @@ If anything is missing open an issue.
 
 |firefox|neofetch and neovim|
 |-|-|
-|<img height="200px" src="screenshots/1.png">|<img height="200px" src="screenshots/2.png">|
+|<img height="210px" src="screenshots/1.png">|<img height="210px" src="screenshots/2.png">|
 
 |file manager & cat-notification|rofi-launcher|
 |-|-|
-|<img height="200px" src="screenshots/3.png">|<img height="200px" src="screenshots/4.png">|
+|<img height="210px" src="screenshots/3.png">|<img height="210px" src="screenshots/4.png">|
 
 |audacious & xava|vscode & rofi-notif|
 |-|-|
-|<img height="200px" src="screenshots/5.png">|<img height="200px" src="screenshots/6.png">|
+|<img height="210px" src="screenshots/5.png">|<img height="210px" src="screenshots/6.png">|
+
+|rofi-powermenu|rofi-window-switcher|
+|-|-|
+|<img height="210px" src="screenshots/9.png">|<img height="210px" src="screenshots/10.png">|
+
+|rofi-alacritty-conf|rofi-emoji|
+|-|-|
+|<img height="210px" src="screenshots/11.png">|<img height="210px" src="screenshots/12.png">|
+
+|discocss|rofi-screenshot|
+|-|-|
+|<img height="210px" src="screenshots/13.png">|<img height="210px" src="screenshots/14.png">|
 
 |i3-lock|sddm-login-manager|
 |-|-|
-|<img height="200px" src="screenshots/7.png">|<img height="200px" src="screenshots/8.png">|
+|<img height="210px" src="screenshots/7.png">|<img height="210px" src="screenshots/8.png">|
