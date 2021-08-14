@@ -5,7 +5,7 @@ fivemin=$((1000 * 60 * 5)) # 5 min in milliseconds
 
 while true; do
     idle=$(xprintidle)
-    echo $idle
+    # echo $idle
     if (($idle > $idletime)); then
         #sudo shutdown -P now
         dbus-send --system --print-reply \
