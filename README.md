@@ -2,10 +2,13 @@
 <img height="200px" src="./screenshots/drawing.svg">
 </p>
 <p align="center">
-<img height="80px" src="./screenshots/ghost-cream.svg"> <img height="80px" src="./screenshots/ghost-pink.svg"> <img height="80px" src="./screenshots/ghost-red.svg"> <img height="80px" src="./screenshots/ghost-violet.svg">
+<img height="80px" src="./screenshots/ghost-red.svg"> <img height="80px" src="./screenshots/ghost-orange.svg"> <img height="80px" src="./screenshots/ghost-green.svg"> <img height="80px" src="./screenshots/ghost-blue.svg">
+</p>
+<p align="center">
+<img src="https://img.shields.io/github/forks/totoro-ghost/dotfiles?color=bf616a&labelColor=3b4252&style=for-the-badge"> <img src="https://img.shields.io/github/stars/totoro-ghost/dotfiles?color=d08770&labelColor=3b4252&style=for-the-badge"> <img src="https://img.shields.io/github/issues-raw/totoro-ghost/dotfiles?color=a3be8c&labelColor=3b4252&style=for-the-badge"> <a href="./license"> <img src="https://img.shields.io/static/v1?label=license&message=WTFPL&color=81a1c1&labelColor=3b4252&style=for-the-badge"> </a>
 </p>
 
-## Info
+## 📝 Info
 
 Program | Name
 ---|---
@@ -56,7 +59,5 @@ If anything is missing open an issue.
 ![ss](screenshots/ss.png)
 
 <p align="center">
-
-<a href="./license"> <img height="40px" src="https://img.shields.io/static/v1?label=license&message=WTFPL&color=bf616a&labelColor=2e3440&style=for-the-badge"> </a>
 
 </p>

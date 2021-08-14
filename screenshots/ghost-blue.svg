@@ -9,7 +9,7 @@
    viewBox="0 0 280.173 280.173"
    style="enable-background:new 0 0 280.173 280.173;"
    xml:space="preserve"
-   sodipodi:docname="ghost-cream.svg"
+   sodipodi:docname="ghost-blue.svg"
    inkscape:version="1.1 (1:1.1+202105261517+ce6663b3b7)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -27,16 +27,16 @@
    inkscape:zoom="2.2985798"
    inkscape:cx="140.0865"
    inkscape:cy="140.30403"
-   inkscape:window-width="1920"
-   inkscape:window-height="1080"
-   inkscape:window-x="0"
-   inkscape:window-y="0"
+   inkscape:window-width="1888"
+   inkscape:window-height="1006"
+   inkscape:window-x="16"
+   inkscape:window-y="58"
    inkscape:window-maximized="1"
    inkscape:current-layer="g16" />
 <g
    id="g16">
 	<path
-   style="fill:#69beb8;fill-opacity:1"
+   style="fill:#81a1c1;fill-opacity:1"
    d="M133.961,0.145C63.079,3.645,8.824,64.026,8.824,134.908v66.506l0,0c0,15.752,0,48.13,0,65.631   c0,6.126,6.126,9.626,11.376,6.126l20.127-12.251c7.876-4.375,17.502-4.375,25.377,0l18.377,10.501   c7.876,4.375,17.502,4.375,25.377,0l18.377-10.501c7.876-4.375,17.502-4.375,25.377,0l18.377,10.501   c7.876,4.375,17.502,4.375,25.377,0l18.377-10.501c7.876-4.375,17.502-4.375,25.377,0l19.252,11.376   c5.251,2.625,11.376-0.875,11.376-6.126c0-18.377,0-50.755,0-65.631l0,0v-70.007C271.349,57.025,209.218-3.355,133.961,0.145z"
    id="path2" />
 	<g
@@ -46,7 +46,7 @@
 			<g
    id="g6">
 				<path
-   style="fill:#01ab99;fill-opacity:1"
+   style="fill:#618bc1;fill-opacity:1"
    d="M26.325,131.408c0-69.132,54.255-126.012,122.512-131.263c-2.625,0-6.126,0-8.751,0      C67.454,0.145,8.824,58.776,8.824,131.408c0,0,0,147.889,0,148.765c7.876,0,13.126-3.5,17.502-7.876      C26.325,256.545,26.325,131.408,26.325,131.408z"
    id="path4" />
 			</g>
