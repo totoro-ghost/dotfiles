@@ -25,3 +25,6 @@ Code Editor | nvim, vsocde
 
 ![ss](screenshots/ss.png)
 
+## License 
+
+[WTFPL](./LICENSE)
