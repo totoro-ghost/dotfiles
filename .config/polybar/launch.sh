@@ -16,20 +16,24 @@ if [ "$t" = "2" ]; then
     if [ "$DESKTOP_SESSION" = "i3" ]; then
         # launch two bars
         echo "Launching two Polybar for i3 dual monitor."
-        polybar -q main -c "$DIR"/config_i3.ini &
-        polybar -q main2 -c "$DIR"/config_i3_2.ini &
+        if [ "$1" == "-compact" ]; then
+            polybar -q main -c "$DIR"/config_i3_campact.ini &
+            polybar -q main2 -c "$DIR"/config_i3_2_compact.ini &
+        else
+            polybar -q main -c "$DIR"/config_i3.ini &
+            polybar -q main2 -c "$DIR"/config_i3_2.ini &
+        fi
+    # add config for other wm
     fi
 else
     # one monitor setup
     if [ "$DESKTOP_SESSION" = "i3" ]; then
         echo "Launching Polybar for i3."
-        polybar -q main -c "$DIR"/config_i3.ini &
-    # make config for other wm
-    # elif [ "$DESKTOP_SESSION" = "openbox" ]; then
-    #     echo "Launching Polybar for openbox single monitor."
-    #     polybar -q main -c "$DIR"/config_openbox.ini &
-    # elif [ "$DESKTOP_SESSION" = "bspwm" ]; then
-    #     echo "Launching Polybar for bspwm single mpnitor."
-    #     polybar -q main -c "$DIR"/config_bspwm.ini &
+        if [ "$1" == "-compact" ]; then
+            polybar -q main -c "$DIR"/config_i3_compact.ini &
+        else
+            polybar -q main -c "$DIR"/config_i3.ini &
+        fi
     fi
+    # add config for other wm
 fi
