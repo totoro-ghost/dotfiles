@@ -24,11 +24,12 @@ else
     if [ "$DESKTOP_SESSION" = "i3" ]; then
         echo "Launching Polybar for i3."
         polybar -q main -c "$DIR"/config_i3.ini &
-    elif [ "$DESKTOP_SESSION" = "openbox" ]; then
-        echo "Launching Polybar for openbox single monitor."
-        polybar -q main -c "$DIR"/config_openbox.ini &
-    elif [ "$DESKTOP_SESSION" = "bspwm" ]; then
-        echo "Launching Polybar for bspwm single mpnitor."
-        polybar -q main -c "$DIR"/config_bspwm.ini &
+    # make config for other wm
+    # elif [ "$DESKTOP_SESSION" = "openbox" ]; then
+    #     echo "Launching Polybar for openbox single monitor."
+    #     polybar -q main -c "$DIR"/config_openbox.ini &
+    # elif [ "$DESKTOP_SESSION" = "bspwm" ]; then
+    #     echo "Launching Polybar for bspwm single mpnitor."
+    #     polybar -q main -c "$DIR"/config_bspwm.ini &
     fi
 fi
