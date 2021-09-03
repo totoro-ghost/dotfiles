@@ -44,7 +44,7 @@ You can take parts of what you like.
 - [polybar config](./.config/polybar)
 - [wallpaper](./screenshots/lighthouse.png)
 - [sddm-theme](https://github.com/totoro-ghost/sddm-astronaut)
-- [firefox user css](.config/firefox_css)
+- [firefox user css](https://github.com/totoro-ghost/firefox-css)
 
 ... and others.
 
