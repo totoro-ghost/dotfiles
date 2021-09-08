@@ -10,6 +10,7 @@ declare -a options=(
     "i3"
     "zathura"
     "feh"
+    "scrcpy"
 )
 
 WINID=$(xprop -root | awk '/_NET_ACTIVE_WINDOW\(WINDOW)/ {print $NF}' | xargs printf "%#010x\n")
@@ -35,6 +36,10 @@ if [ "$WM_CLASS_" == "Alacritty" ]; then
     fi
 elif [ "$WM_CLASS_" == "zathura" ] || [ "$WM_CLASS_" == "Zathura" ]; then
     choice="zathura"
+elif [ "$WM_CLASS_" == "scrcpy" ] || [ "$WM_CLASS_" == "scrcpy" ]; then
+    choice="scrcpy"
+elif [ "$WM_CLASS_" == "feh" ] || [ "$WM_CLASS_" == "Feh" ]; then
+    choice="feh"
 fi
 
 if [ -z "$choice" ]; then
@@ -57,11 +62,14 @@ if [ "$choice" == "i3" ]; then
         rofi -theme "$THEME" -dmenu -p "i3" -i
 
 elif [ "$choice" == "zathura" ]; then
-    cat <"$SOURCES"/zathura | sed 's/^/* /' | sed 's/->/ /' | rofi -theme "$THEME" -dmenu -p "zathura"
+    cat <"$SOURCES"/zathura | rofi -markup-rows -theme "$THEME" -dmenu -i -p "zathura"
 
 elif [ "$choice" == "feh" ]; then
-    cat <"$SOURCES"/feh | rofi -theme "$THEME" -dmenu -p "feh"
+    cat <"$SOURCES"/feh | rofi -theme "$THEME" -dmenu -i -p "feh"
 
 elif [ "$choice" == "nvim" ]; then
-    cat <"$SOURCES"/nvim | rofi -theme "$THEME" -dmenu -p "nvim" -i
+    cat <"$SOURCES"/nvim | rofi -theme "$THEME" -dmenu -i -p "nvim"
+
+elif [ "$choice" == "scrcpy" ]; then
+    cat <"$SOURCES"/scrcpy | rofi -markup-rows -theme "$THEME" -dmenu -i -p "scrcpy"
 fi

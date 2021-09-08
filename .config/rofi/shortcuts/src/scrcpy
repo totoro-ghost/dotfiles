@@ -1,0 +1,25 @@
+Switch Fullscreen mode                                  <b>f</b>
+Rotate display left                                     <b>→</b>
+Rotate display right                                    <b>←</b>
+Resize window 1:1                                       <b>g</b>
+Resize window to remove black borders                   <b>w | Double-left-click</b>
+Click on HOME                                           <b>h | Middle-click</b>
+Click on BACK                                           <b>b | Right-click</b>
+Click on APP_SWITCH                                     <b>s | 4th-click</b>
+Click on MENU (unlock screen)                           <b>m</b>
+Click on VOLUME_UP                                      <b>↑</b>
+Click on VOLUME_DOWN                                    <b>↓</b>
+Click on POWER                                          <b>p</b>
+Power on                                            <b>Right-click</b>
+Turn device screen off (keep mirroring)                 <b>o</b>
+Turn device screen on                                   <b>Shift+o</b>
+Rotate device screen                                    <b>r</b>
+Expand notification panel                               <b>n | 5th-click</b>
+Expand settings panel                                   <b>n+n | Double-5th-click</b>
+Collapse panels                                         <b>Shift+n</b>
+Copy to clipboard                                       <b>c</b>
+Cut to clipboard                                        <b>x</b>
+Synchronize clipboards and paste                        <b>v</b>
+Inject computer clipboard text                          <b>Shift+v</b>
+Enable/disable FPS counter (on stdout)                  <b>i</b>
+Pinch-to-zoom                                       <b>Ctrl+click-and-move</b>
