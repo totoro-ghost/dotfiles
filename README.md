@@ -52,7 +52,7 @@ If anything is missing open an issue 🛠.
 
 ### 🖥 Fonts used
 
-- [feather](https://github.com/AT-UI/feather-font/tree/master/src/fonts)
+- [feather](https://github.com/adi1090x/polybar-themes/blob/master/fonts/feather.ttf?raw=true)
 - [Iosevka Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Iosevka)
 - [VictorMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/VictorMono)
 
