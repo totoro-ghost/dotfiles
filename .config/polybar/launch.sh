@@ -17,7 +17,7 @@ if [ "$t" = "2" ]; then
         # launch two bars
         echo "Launching two Polybar for i3 dual monitor."
         if [ "$1" == "-compact" ]; then
-            polybar -q main -c "$DIR"/config_i3_campact.ini &
+            polybar -q main -c "$DIR"/config_i3_compact.ini &
             polybar -q main2 -c "$DIR"/config_i3_2_compact.ini &
         else
             polybar -q main -c "$DIR"/config_i3.ini &
